@@ -4,9 +4,11 @@ import com.dsumtsov.bean.post.processor.CustomBeanPostProcessor;
 import com.dsumtsov.bean.post.processor.bean.SpringBean1;
 import com.dsumtsov.bean.post.processor.bean.SpringBean2;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@ComponentScan("com.dsumtsov.bean.post.processor")
 public class AppConfiguration {
 
     @Bean
