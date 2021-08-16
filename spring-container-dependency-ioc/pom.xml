@@ -19,6 +19,7 @@
         <module>bean-scopes-web</module>
         <module>bean-factory-post-processor</module>
         <module>bean-post-processor</module>
+        <module>proxy-objects</module>
     </modules>
 
     <properties>
