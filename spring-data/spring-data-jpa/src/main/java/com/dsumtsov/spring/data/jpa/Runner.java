@@ -8,7 +8,9 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 @ComponentScan
 @EnableAspectJAutoProxy
 public class Runner {
+
     public static void main(String[] args) {
+
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Runner.class);
         context.registerShutdownHook();
 

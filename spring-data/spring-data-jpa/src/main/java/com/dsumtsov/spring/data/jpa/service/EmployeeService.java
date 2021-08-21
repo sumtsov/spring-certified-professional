@@ -4,14 +4,17 @@ import com.dsumtsov.spring.data.jpa.dao.EmployeeDAO;
 import com.dsumtsov.spring.data.jpa.model.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Date;
 
 @Service
 public class EmployeeService {
+
     @Autowired
     private EmployeeDAO employeeDAO;
 
+    @Transactional
     public void saveAllEmployees() {
 
         System.out.println("Saving all employees...");
@@ -25,6 +28,7 @@ public class EmployeeService {
         System.out.println("Saved all employees");
     }
 
+    @Transactional
     public void listAllEmployees() {
 
         System.out.println("Listing all employees...");
