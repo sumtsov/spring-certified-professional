@@ -53,6 +53,16 @@
             <artifactId>spring-orm</artifactId>
             <version>${org.springframework.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+            <version>${org.springframework.boot.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jdbc</artifactId>
+            <version>${org.springframework.boot.version}</version>
+        </dependency>
         <!-- Automatically generates Data Access Objects for you -->
         <dependency>
             <groupId>org.springframework.data</groupId>

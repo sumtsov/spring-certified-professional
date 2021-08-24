@@ -1,6 +1,6 @@
-package com.dsumtsov.spring.data.source.standalone.service;
+package com.dsumtsov.spring.data.source.boot.service;
 
-import com.dsumtsov.spring.data.source.standalone.dao.EmployeeDAO;
+import com.dsumtsov.spring.data.source.boot.dao.EmployeeDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
