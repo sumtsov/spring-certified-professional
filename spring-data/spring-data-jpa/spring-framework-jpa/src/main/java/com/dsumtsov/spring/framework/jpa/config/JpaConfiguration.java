@@ -1,4 +1,4 @@
-package com.dsumtsov.spring.data.jpa.config;
+package com.dsumtsov.spring.framework.jpa.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -17,14 +17,14 @@ import javax.sql.DataSource;
  * @EnableJpaRepositories allows Spring to generate DAO implementations automatically
  */
 @Configuration
-@EnableJpaRepositories(basePackages = {"com.dsumtsov.spring.data.jpa.dao"})
+@EnableJpaRepositories(basePackages = {"com.dsumtsov.spring.framework.jpa.dao"})
 public class JpaConfiguration {
     @Bean
     @Autowired
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource);
-        em.setPackagesToScan("com.dsumtsov.spring.data.jpa.model");
+        em.setPackagesToScan("com.dsumtsov.spring.framework.jpa.model");
 
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);

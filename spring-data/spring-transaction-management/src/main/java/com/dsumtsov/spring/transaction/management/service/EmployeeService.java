@@ -35,6 +35,10 @@ public class EmployeeService {
         saveEmployees();
     }
 
+    @Transactional
+    public void methodWithTransaction() {
+    }
+
     private void saveEmployees() {
         employeeDAO.saveEmployee(new Employee(1, "John", "Doe", "John.Doe@corp.com", "555-55-55", Date.valueOf("2019-06-05"), 70000));
         employeeDAO.saveEmployee(new Employee(2, "Willow", "Zhang", "Willow.Zhang@corp.com", "555-55-56", Date.valueOf("2019-07-12"), 80000));

@@ -1,4 +1,4 @@
-package com.dsumtsov.spring.data.jpa.config;
+package com.dsumtsov.spring.framework.jpa.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

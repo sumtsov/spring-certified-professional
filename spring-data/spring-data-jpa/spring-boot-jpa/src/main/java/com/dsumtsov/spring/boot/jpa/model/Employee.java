@@ -1,4 +1,4 @@
-package com.dsumtsov.spring.data.jpa.model;
+package com.dsumtsov.spring.boot.jpa.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
