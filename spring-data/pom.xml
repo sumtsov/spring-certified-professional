@@ -12,6 +12,7 @@
         <module>spring-data-jpa</module>
         <module>spring-data-source</module>
         <module>spring-jdbc-callbacks</module>
+        <module>spring-transaction-management</module>
     </modules>
 
     <properties>
