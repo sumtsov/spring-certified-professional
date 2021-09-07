@@ -3,6 +3,7 @@ package com.dsumtsov.basic.authentication.authorization.controller;
 import com.dsumtsov.basic.authentication.authorization.dao.CustomerDAO;
 import com.dsumtsov.basic.authentication.authorization.model.Customer;
 import com.dsumtsov.basic.authentication.authorization.security.annotations.IsCustomerRead;
+import com.google.common.collect.Lists;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,6 +24,6 @@ public class CustomerController {
     @IsCustomerRead
     @GetMapping
     public List<Customer> getAllCustomers() {
-        return (List<Customer>) customerDAO.findAll();
+        return Lists.newArrayList(customerDAO.findAll());
     }
 }

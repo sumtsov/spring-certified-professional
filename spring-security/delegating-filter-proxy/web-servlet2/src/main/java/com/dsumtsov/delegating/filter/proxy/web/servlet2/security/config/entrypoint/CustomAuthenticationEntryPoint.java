@@ -1,4 +1,4 @@
-package com.dsumtsov.basic.authentication.authorization.security.config.entrypoint;
+package com.dsumtsov.delegating.filter.proxy.web.servlet2.security.config.entrypoint;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.www.BasicAuthenticationEntryPoint;
@@ -24,7 +24,7 @@ public class CustomAuthenticationEntryPoint extends BasicAuthenticationEntryPoin
 
     @Override
     public void afterPropertiesSet() {
-        setRealmName("basic-authentication-authorization");
+        setRealmName("delegating-filter-proxy-web-servlet2");
         super.afterPropertiesSet();
     }
 }

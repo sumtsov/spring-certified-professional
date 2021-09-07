@@ -2,7 +2,8 @@ package com.dsumtsov.basic.authentication.authorization.security.constants;
 
 public class SecurityRoles {
 
-    private SecurityRoles() {}
+    private SecurityRoles() {
+    }
 
     public static final String ROLE_PREFIX = "ROLE_";
 
