@@ -12,6 +12,7 @@
         <module>basic-authentication-authorization</module>
         <module>delegating-filter-proxy</module>
         <module>security-filter-chain</module>
+        <module>password-encoder</module>
     </modules>
 
     <properties>
