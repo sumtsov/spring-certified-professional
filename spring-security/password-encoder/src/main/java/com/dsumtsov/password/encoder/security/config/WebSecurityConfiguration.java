@@ -19,7 +19,7 @@ import static com.dsumtsov.password.encoder.security.constants.SecurityRoles.SUP
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
-public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     private final DataSource dataSource;
     private final CustomAuthenticationEntryPoint authenticationEntryPoint;

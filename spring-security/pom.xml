@@ -13,6 +13,7 @@
         <module>delegating-filter-proxy</module>
         <module>security-filter-chain</module>
         <module>password-encoder</module>
+        <module>method-security</module>
     </modules>
 
     <properties>
