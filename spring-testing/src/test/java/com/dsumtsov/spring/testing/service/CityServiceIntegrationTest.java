@@ -23,7 +23,8 @@ public class CityServiceIntegrationTest {
     private CityService cityService;
 
     @Test
-    @DirtiesContext
+    @DirtiesContext // it indicates the associated test or class modifies the ApplicationContext;
+    // it tells the testing framework to close and recreate the context for later tests
     public void findCityTest() {
 
         City city = cityService.find(MOSCOW);
