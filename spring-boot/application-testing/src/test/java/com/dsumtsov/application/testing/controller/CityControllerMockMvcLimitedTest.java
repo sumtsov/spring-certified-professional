@@ -1,7 +1,7 @@
 package com.dsumtsov.application.testing.controller;
 
-import com.dsumtsov.application.testing.dao.CityDAO;
 import com.dsumtsov.application.testing.model.City;
+import com.dsumtsov.application.testing.service.CityService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +33,7 @@ public class CityControllerMockMvcLimitedTest {
     // in this test setup cityDAO is not created on Application Context startup,
     // but CityController needs it, so we create a mock
     @MockBean
-    private CityDAO cityDAO;
+    private CityService cityService;
 
     @Test
     public void saveCityTest() throws Exception {
@@ -43,12 +43,12 @@ public class CityControllerMockMvcLimitedTest {
                         .contentType(MediaType.APPLICATION_JSON)
         ).andExpect(status().isOk());
 
-        verify(cityDAO).save(new City(null, "Los Angeles"));
+        verify(cityService).save(new City(null, "Los Angeles"));
     }
 
     @Test
     public void getCitiesTest() throws Exception {
-        when(cityDAO.findAll())
+        when(cityService.findAll())
                 .thenReturn(Arrays.asList(
                         new City(1L, "Los Angeles"),
                         new City(2L, "New York")

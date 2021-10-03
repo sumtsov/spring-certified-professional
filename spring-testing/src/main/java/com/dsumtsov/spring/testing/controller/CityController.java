@@ -1,8 +1,7 @@
-package com.dsumtsov.application.testing.controller;
+package com.dsumtsov.spring.testing.controller;
 
-import com.dsumtsov.application.testing.dao.CityDAO;
-import com.dsumtsov.application.testing.model.City;
-import com.dsumtsov.application.testing.service.CityService;
+import com.dsumtsov.spring.testing.model.City;
+import com.dsumtsov.spring.testing.service.CityService;
 import com.google.common.collect.Lists;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +20,7 @@ public class CityController {
 
     @GetMapping
     public List<City> getCities() {
-        return cityService.findAll();
+        return Lists.newArrayList(cityService.findAll());
     }
 
     @PostMapping

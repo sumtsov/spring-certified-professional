@@ -23,7 +23,6 @@ public class EmployeeDAO {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
-
     /**
      * Usage of RowMapper
      */
@@ -111,6 +110,7 @@ public class EmployeeDAO {
     }
 
     private static class AverageSalaryResultSetExtractor implements ResultSetExtractor<Float> {
+
         @Override
         public Float extractData(ResultSet rs) throws SQLException, DataAccessException {
             float salarySum = 0;

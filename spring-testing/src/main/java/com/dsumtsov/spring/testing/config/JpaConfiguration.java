@@ -1,11 +1,10 @@
-package com.dsumtsov.spring.framework.jpa.config;
+package com.dsumtsov.spring.testing.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.orm.jpa.JpaTransactionManager;
-import org.springframework.orm.jpa.JpaVendorAdapter;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -13,11 +12,8 @@ import org.springframework.transaction.PlatformTransactionManager;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
-/**
- * @EnableJpaRepositories allows Spring to generate DAO implementations automatically
- */
 @Configuration
-@EnableJpaRepositories(basePackages = {"com.dsumtsov.spring.framework.jpa.dao"})
+@EnableJpaRepositories(basePackages = {"com.dsumtsov.spring.testing.dao"})
 public class JpaConfiguration {
 
     @Bean
@@ -25,10 +21,12 @@ public class JpaConfiguration {
     public LocalContainerEntityManagerFactoryBean entityManagerFactory(DataSource dataSource) {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource);
-        em.setPackagesToScan("com.dsumtsov.spring.framework.jpa.model");
+        em.setPackagesToScan("com.dsumtsov.spring.testing.model");
 
-        JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
-        em.setJpaVendorAdapter(vendorAdapter);
+        HibernateJpaVendorAdapter hibernateJpaVendorAdapter = new HibernateJpaVendorAdapter();
+        hibernateJpaVendorAdapter.setGenerateDdl(true);
+
+        em.setJpaVendorAdapter(hibernateJpaVendorAdapter);
 
         return em;
     }
